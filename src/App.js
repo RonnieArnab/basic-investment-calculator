@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import logo from "./assets/investment-calculator-logo.png";
+
 import InvestmentForm from "./components/InvestmentFrom/InvestmentForm";
 import Result from "./components/Result/Result";
+import Header from "./components/Header/Header";
 
 function App() {
   const [userInput, setuserInput] = useState(null);
@@ -32,12 +33,11 @@ function App() {
 
   return (
     <div>
-      <header className="header">
-        <img src={logo} alt="logo" />
-        <h1>Investment Calculator</h1>
-      </header>
+      <Header />
       <InvestmentForm onCalculate={calculateHandler} />
-      {!userInput && <p>No investment Calculated</p>}
+      {!userInput && (
+        <p style={{ textAlign: "center" }}>No investment Calculated</p>
+      )}
       {userInput && (
         <Result
           result={yearlyData}

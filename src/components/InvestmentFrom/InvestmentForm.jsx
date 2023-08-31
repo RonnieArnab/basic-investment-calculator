@@ -23,7 +23,7 @@ const InvestmentForm = (props) => {
     setuserInput((prevInput) => {
       return {
         ...prevInput,
-        [input]: value,
+        [input]: +value,
       };
     });
   };
